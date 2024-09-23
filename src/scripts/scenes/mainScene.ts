@@ -3,12 +3,16 @@ import FpsText from '../objects/fpsText'
 
 export default class MainScene extends Phaser.Scene {
   fpsText
+  background
 
   constructor() {
     super({ key: 'MainScene' })
   }
 
   create() {
+    this.background = this.add.image(0, 0, "arena");
+    this.background.setOrigin(0,0 );
+
     new PhaserLogo(this, this.cameras.main.width / 2, 0)
     this.fpsText = new FpsText(this)
 
